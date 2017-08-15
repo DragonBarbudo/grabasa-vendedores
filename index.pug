@@ -94,8 +94,10 @@ html(lang="es")
                       .column.is-2: p.notification Día 4
                       .column.is-2: p.notification Día 5
                       .column.is-2: p.notification Día 6
-                
-                              
+              .has-text-centered.mt
+                button(@click="activeTab = 4").button.is-large.is-info 
+                  span Mira los beneficios
+                  span.icon: i.material-icons keyboard_arrow_right                              
           b-tab-item(label="ESCENARIO VIRTUAL")
             .container
               .columns
