@@ -1,0 +1,133 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://unpkg.com/buefy/lib/buefy.min.css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", type="text/css", href="app/app.css")
+    link(rel="icon" type="image/png" href="favicon.png")
+
+  body
+  
+
+    
+    #app
+        b-tabs(position="is-right" v-model="activeTab").block
+          b-tab-item(label="HOME").home
+            .container
+              .columns
+                .column.is-6
+                  .has-text-centered
+                    img(src="app/img/adidas.png", alt="Adidas").mt2
+                .column.is-6
+                  h1.is-size-2.has-text-centered INCENTIVOS PARA VENDEDORES GRABASA
+                  .has-text-centered.is-size-5.is-uppercase
+                    p.mt SI HAS CUBIERTO TUS OBJETIVOS DE VENTA EN PRODUCTOS #[strong ADIDAS] Y #[strong REEBOK], YA ESTÁS DENTRO DEL PLAZO ESTABLECIDO DATE PRISA E INGRESA CON TU USUARIO Y CONTRASEÑA PARA VER REFLEJADO TU AVANCE Y PODER ELEGIR #[strong DIFERENTES ACABADOS O MUEBLES PARA TU CASA].
+                  .has-text-centered.mt
+                    button(@click="activeTab = 1").button.is-large.is-info
+                      span Mecánica
+                      span.icon: i.material-icons keyboard_arrow_right
+          b-tab-item(label="MECÁNICA")
+            .container
+              .columns
+                .column.is-8.is-offset-2
+                  h1.is-size-2.has-text-centered INCENTIVOS PARA VENDEDORES GRABASA
+                  .has-text-centered.is-size-5.is-uppercase
+                    p.mt Sé uno de los #[strong 3 primeros vendedores] que hayan #[strong superado el 100% de ambos objetivos] y de acuerdo a tu avance podrás elegir beneficios de esta aplicación como son:
+                    p.mt Pintura 
+                    p Remodelación de baño 
+                    p Cocina integral 
+                    p Sala 
+                    p Comedor 
+                    p Recamara 
+                    p Construcción de 2do piso 
+                      span.is-size-6 (20 m2, 30 m2, 40 m2, hasta 60 m2)
+                  .has-text-centered.mt
+                    button(@click="activeTab = 2").button.is-large.is-info
+                      span Ingresa
+                      span.icon: i.material-icons keyboard_arrow_right
+                    
+
+          b-tab-item(label="INGRESA")
+            .container
+              .columns
+                .column: h1.is-size-2.has-text-centered INGRESA CON TU USUARIO Y CONTRASEÑA
+              .columns
+                .column.is-10.is-offset-1
+                  form(action="#").registryForm
+                    b-field(grouped)
+                      b-field(label="Usuario" expanded)
+                        b-input
+                      b-field(label="Contraseña" expanded)
+                        b-input(type="password")
+
+                    .has-text-centered.mt
+                      button(@click="activeTab=3").button.is-large.is-info
+                        span Ingresar
+                        
+          b-tab-item(label="AVANCE")
+            .container
+              .columns
+                .column: h1.is-size-1.has-text-centered AVANCE DE VENTAS
+              .columns.mt2
+                .column.is-3: h3.is-size-3.is-uppercase
+                  .is-size-5.obj Objetivo
+                  strong Adidas
+                .column.is-9
+                    .columns.is-gapless.is-mobile.days
+                      .column.is-2: p.notification.is-warning Día 1
+                      .column.is-2: p.notification Día 2
+                      .column.is-2: p.notification Día 3
+                      .column.is-2: p.notification Día 4
+                      .column.is-2: p.notification Día 5
+                      .column.is-2: p.notification Día 6
+              .columns.mt2
+                .column.is-3: h3.is-size-3.is-uppercase
+                  .is-size-5.obj Objetivo
+                  strong Reebok
+                .column.is-9
+                    .columns.is-gapless.is-mobile.days
+                      .column.is-2: p.notification.is-warning Día 1
+                      .column.is-2: p.notification.is-warning Día 2
+                      .column.is-2: p.notification.is-warning Día 3
+                      .column.is-2: p.notification Día 4
+                      .column.is-2: p.notification Día 5
+                      .column.is-2: p.notification Día 6
+                
+                              
+          b-tab-item(label="ESCENARIO VIRTUAL")
+            .container
+              .columns
+                .column: h1.is-size-1.has-text-centered ESCENARIO VIRTUAL
+              .columns
+                  .column.is-12
+                    b-tabs(v-model="sceneTab").escenarioTabs.has-text-centered
+                      b-tab-item(label="Pintura"): img(src="app/img/pintura.jpg").is-fluid
+                      b-tab-item(label="Remodelación de baño"): img(src="app/img/banio.jpg").is-fluid
+                      b-tab-item(label="Cocina integral"): img(src="app/img/cocina.jpg").is-fluid
+                      b-tab-item(label="Sala"): img(src="app/img/sala.jpg").is-fluid
+                      b-tab-item(label="Comedor"): img(src="app/img/comedor.jpg").is-fluid
+                      b-tab-item(label="Recámara"): img(src="app/img/recamara.jpg").is-fluid
+                      b-tab-item(label="Construcción de 2do piso"): img(src="app/img/pintura.jpg").is-fluid
+              
+                  
+
+    footer.footer
+      nav.level
+        .level-left
+          .level-item: img(src="app/img/grabasa.png", alt="Grabasa")
+        .level-right
+          p.level-item: a(data-page) Aviso de privacidad
+          p.level-item: a(data-page) Términos y condiciones
+          
+          
+
+    
+    
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="https://unpkg.com/vue@2.4.2/dist/vue.min.js")
+    script(src="https://unpkg.com/buefy")
+
+    script(src="app/app.js")
+    script(src="http://livejs.com/live.js")
