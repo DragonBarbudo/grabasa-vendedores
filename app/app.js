@@ -16,12 +16,14 @@ var app = new Vue({
       loadingComponent : null
     },
     methods: {
+      
       login : function(){
-        app.loadingComponent = this.$loading.open();
+       
         if(app.user.usuario == null || app.user.contrasena == null){
           this.$dialog.alert('Ingresa los datos de acceso');
           return false;
         }
+        app.loadingComponent = this.$loading.open();
         var credentials = {"type":"seller", "key": "usuario", "value":app.user.usuario };
         fetch('https://dragonbarbudo.com/api/grabasa/r/', {
           method: "POST",
@@ -41,11 +43,9 @@ var app = new Vue({
             app.$dialog.alert('Error en los datos de acceso');
           }
           
-        });
-
-
-        
+        }); 
       }
-    },
+    
+    }
 
 })
